@@ -23,6 +23,7 @@ with mp_objectron.Objectron(static_image_mode=False,max_num_objects=2,min_detect
       results = objectron.process(image)
 
       image.flags.writable = True
+      image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
 
       if results.detected_objects:
 
